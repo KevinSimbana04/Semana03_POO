@@ -5,7 +5,8 @@ public class MainCocinero {
 
         Scanner sc = new Scanner(System.in);
 
-        Cocinero[] cocineros= new Cocinero[3];
+        Cocinero cociner1=null, cociner2=null, cociner3=null;
+
 
         for(int i=0; i<3; i++){
             System.out.println("Ingrese sus datos N:" +(i+1) );
@@ -17,7 +18,18 @@ public class MainCocinero {
             sc.nextLine();
             System.out.print("Ingrese la especialida: ");
             String especialidad = sc.nextLine();
+
+            if (i==0){
+                cociner1=new Cocinero(nombre,anio_experiencia,especialidad);
+            }else if (i==1){
+                cociner2=new Cocinero(nombre,anio_experiencia,especialidad);
+            }else if (i==2){
+                cociner3=new Cocinero(nombre,anio_experiencia,especialidad);
+            }
         }
 
+        cociner1.mostrar_info();
+        cociner2.mostrar_info();
+        cociner3.mostrar_info();
     }
 }
